@@ -1,4 +1,5 @@
 import React from "react";
+import SongList from "./SongList";
 
 /*
 Not going to use component level state for this project so make 
@@ -7,7 +8,11 @@ Redux for managing state...
 */
 
 const App = () => {
-  return <div>App</div>;
+  return (
+    <div>
+      <SongList />
+    </div>
+  );
 };
 
 export default App;
