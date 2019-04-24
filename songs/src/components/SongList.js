@@ -1,6 +1,7 @@
 //import React from "react";
 import React, { Component } from "react"; // alternate way of importing Component base class
 import { connect } from "react-redux";
+import { selectSong } from "../actions"; // was exported as a named function
 
 class SongList extends Component {
   renderList() {
@@ -18,7 +19,7 @@ class SongList extends Component {
   }
 
   render() {
-    //console.log(this.props);
+    console.log(this.props);
     return <div className="ui divided list">{this.renderList()}</div>;
   }
 }
@@ -31,7 +32,10 @@ const mapStateToProps = state => {
 
 //create an instance of connect component and pass it some configuration that will get it to reach back up to the
 //Provider and tell it that it wants to get a list of all the songs inside of our app.
-export default connect(mapStateToProps)(SongList);
+export default connect(
+  mapStateToProps,
+  { selectSong: selectSong }
+)(SongList);
 
 /*
 function connect(){
