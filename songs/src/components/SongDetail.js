@@ -1,10 +1,13 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 
-const SongDetail = () => {
-    return (
-        <div>SongDetail</div>
-    );
-}
+const SongDetail = props => {
+  console.log(props);
+  return <div>SongDetail</div>;
+};
 
-export default SongDetail;
+const mapStateTopProps = state => {
+  return { selectedSong: state.selectedSong };
+};
+
+export default connect(mapStateTopProps)(SongDetail);
